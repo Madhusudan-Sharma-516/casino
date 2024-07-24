@@ -1,12 +1,9 @@
 const moneyValue = localStorage.getItem("money");
-
-
-userMoney = Number(moneyValue);
+let userMoney = Number(moneyValue);
 const moneyTxt = document.querySelector("#moneyTxt");
 moneyTxt.innerText = userMoney;
 
-
-
+const userInputMoney = localStorage.getItem("numMoney");
 
 function RandomNumber() {
   const min = 1;
@@ -15,17 +12,14 @@ function RandomNumber() {
   return randomNumber;
 }
 
-
 const startBtn = document.getElementById('startButton');
 const userChoice = document.querySelector("#userNum");
-
-
 
 document.getElementById('startButton').addEventListener('click', () => {
   const boxes = document.querySelectorAll('.numberBox');
   let currentIndex = 0;
   let blinkCount = 0;
-  const maxBlinks = 5 + Math.floor(Math.random() * 2); // 6 to 7 times
+  const maxBlinks = 6 + Math.floor(Math.random() * 2); // 6 to 7 times
   startBtn.disabled = true;
 
   const blinkInterval = setInterval(() => {
@@ -41,15 +35,25 @@ document.getElementById('startButton').addEventListener('click', () => {
       boxes[randomIndex].classList.add('blink');
       document.getElementById('result').innerText = `Your random number is ${randomIndex + 1}`;
 
-      if (userChoice.value === randomIndex + 1) {
+      if (parseInt(userChoice.value) === randomIndex + 1) {
         console.log('win');
-
+        const winningAmount = parseInt(userInputMoney) * 2;
+        userMoney += winningAmount;
+        localStorage.setItem("money", userMoney);
+        document.getElementById('result').innerText += ` - You win! Your winning money is ₹${winningAmount}`;
       } else {
         console.log('lose');
-
+        const losingAmount = parseInt(userInputMoney);
+        document.getElementById('result').innerText += ` - You lose! You lost ₹${losingAmount}`;
       }
 
+      moneyTxt.innerText = userMoney;
+      localStorage.removeItem("numMoney");
+
+      const goToHomeBtn = document.createElement('button');
+      goToHomeBtn.innerText = 'Go to Home';
+      goToHomeBtn.onclick = () => window.location.href = '../index.html';
+      document.getElementById('container').appendChild(goToHomeBtn);
     }
   }, 300);
 });
-

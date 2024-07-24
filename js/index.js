@@ -33,6 +33,7 @@ function validateInput() {
     } else {
       userMoney -= userInput;
       localStorage.setItem("money", userMoney);
+      localStorage.setItem("numMoney", userInput)
       document.querySelector("#moneyTxt").innerText = userMoney;
       closePopup();
       window.location.href = `./html/${redirectUrl}`;
