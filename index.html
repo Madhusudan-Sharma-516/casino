@@ -26,24 +26,35 @@
         <img src="./resource/game-1.jpeg" alt="game-poster" />
         <div class="card-info">
           <p class="game-name">Guess The Number</p>
-          <button class="playBtn">Play</button>
+          <button onclick="goToNmber()" class="playBtn">Play</button>
         </div>
       </div>
       <div class="game-card">
         <img src="./resource/game-2.jpeg" alt="game-poster" />
         <div class="card-info">
           <p class="game-name">Choose A Card</p>
-          <button class="playBtn">Play</button>
+          <button onclick="goToCard()" class="playBtn">Play</button>
         </div>
       </div>
       <div class="game-card">
         <img src="./resource/game-3.jpeg" alt="game-poster" />
         <div class="card-info">
           <p class="game-name">Roll The Dice</p>
-          <button class="playBtn">Play</button>
+          <button onclick="goToDice()" class="playBtn">Play</button>
         </div>
       </div>
     </main>
     <footer><p>Copyright © 2024 Casino, Inc.</p></footer>
+    <script>
+      function goToNmber() {
+        window.location.href = " ./html/numberGame.html";
+      }
+      function goToCard() {
+        window.location.href = " ./html/cardGame.html";
+      }
+      function goToDice() {
+        window.location.href = " ./html/diceGame.html";
+      }
+    </script>
   </body>
 </html>
