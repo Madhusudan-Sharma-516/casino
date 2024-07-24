@@ -15,11 +15,22 @@ function RandomNumber() {
 const startBtn = document.getElementById('startButton');
 const userChoice = document.querySelector("#userNum");
 
+// Warn the user before they refresh or leave the page
+window.addEventListener('beforeunload', (event) => {
+  event.preventDefault();
+  event.returnValue = '';
+});
+
+// Redirect to home page if user confirms refresh or navigation
+window.addEventListener('unload', () => {
+  window.location.href = '../index.html';
+});
+
 document.getElementById('startButton').addEventListener('click', () => {
   const boxes = document.querySelectorAll('.numberBox');
   let currentIndex = 0;
   let blinkCount = 0;
-  const maxBlinks = 6 + Math.floor(Math.random() * 2); // 6 to 7 times
+  const maxBlinks = 4 + Math.floor(Math.random() * 2); // 6 to 7 times
   startBtn.disabled = true;
 
   const blinkInterval = setInterval(() => {
@@ -51,6 +62,7 @@ document.getElementById('startButton').addEventListener('click', () => {
       localStorage.removeItem("numMoney");
 
       const goToHomeBtn = document.createElement('button');
+      goToHomeBtn.classList = 'gohome';
       goToHomeBtn.innerText = 'Go to Home';
       goToHomeBtn.onclick = () => window.location.href = '../index.html';
       document.getElementById('container').appendChild(goToHomeBtn);

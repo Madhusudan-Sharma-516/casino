@@ -65,9 +65,22 @@ form select option {
 #result {
   margin-top: 10px;
   color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 @keyframes blink-animation {
   50% {
     background-color: yellow;
   }
+}
+
+.gohome {
+  background-color: red;
+  color: white;
+  font-weight: 500;
+  border: none;
+  height: 35px;
+  margin-top: 10px;
+  width: 80px;
+  border-radius: 3px;
+  box-shadow: 0 0 2px darkslategray;
 }
