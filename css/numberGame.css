@@ -1,0 +1,43 @@
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: monospace;
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.title p {
+  margin-top: 10px;
+}
+
+form {
+  margin-top: 30px;
+}
+
+form select {
+  height: 33px;
+  width: 53px;
+  background: transparent;
+  color: white;
+  font-weight: 500;
+  font-size: 1rem;
+  outline: none;
+  padding: 5px;
+  margin: 12px;
+  border: 2px solid white;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 8px;
+}
+form select option {
+  background: rgba(146, 23, 23, 0.212);
+  color: rgb(0, 0, 0);
+}

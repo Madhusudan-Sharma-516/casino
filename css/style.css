@@ -149,3 +149,66 @@ footer {
     justify-content: center;
   }
 }
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.842);
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 8px;
+  border: 1px solid rgba(255, 255, 255, 0.342);
+  height: 300px;
+  width: 300px;
+  padding: 20px;
+  z-index: 1001;
+  border-radius: 6px;
+  color: white;
+}
+
+.popup input {
+  margin-top: 40px;
+  padding: 5px;
+  width: calc(100% - 12px);
+  border: none;
+  outline: none;
+}
+
+.popup button {
+  margin-top: 30px;
+  padding: 5px;
+}
+
+.popup .close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
